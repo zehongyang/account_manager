@@ -1,0 +1,46 @@
+{
+	"pages": [ 
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "应用列表"
+			}
+		},
+		{
+			"path": "pages/setting/index",
+			"style": {
+				"navigationBarTitleText": "设置"
+			}
+		},
+		{
+			"path": "pages/addAccount/index",
+			"style": {
+				"navigationBarTitleText": "添加应用"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {},
+	"tabBar": {
+		"color": "#94A3B8",
+		"selectedColor": "#0F55D7",
+		"borderStyle": "black",
+		"backgroundColor": "#FFFFFF",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/images/password.png",
+			"selectedIconPath": "static/images/password_select.png",
+			"text": "账号"
+		}, {
+			"pagePath": "pages/setting/index",
+			"iconPath": "static/images/setting.png",
+			"selectedIconPath": "static/images/setting_select.png",
+			"text": "设置"
+	}]
+}
+}
