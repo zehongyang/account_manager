@@ -41,6 +41,6 @@
 		background-color: #0F55D7;
 		color: #fff;
 		font-size: 32rpx;
-		border-radius: 40rpx;
+		border-radius: 16rpx;
 	}
 </style>

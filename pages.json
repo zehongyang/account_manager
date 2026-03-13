@@ -9,7 +9,7 @@
 		{
 			"path": "pages/setting/index",
 			"style": {
-				"navigationBarTitleText": "设置"
+				"navigationBarTitleText": "我的"
 			}
 		},
 		{
@@ -40,7 +40,7 @@
 			"pagePath": "pages/setting/index",
 			"iconPath": "static/images/setting.png",
 			"selectedIconPath": "static/images/setting_select.png",
-			"text": "设置"
+			"text": "我的"
 	}]
 }
 }
