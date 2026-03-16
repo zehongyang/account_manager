@@ -2,18 +2,26 @@
 	<view class="info">
 		<image src="/static/images/avatar.png"></image>
 		<text>未登录</text>
-		<button @click="login">登录</button>
+		<button @click="wxLogin">登录</button>
 	</view>
 </template>
 
 <script setup>
-	const login = ()=>{
-		uni.login({
-  			provider: 'weixin', 
-  			success: function (loginRes) {
-    		console.log(loginRes);
-  		}
-	});
+import { login } from '@/utils/request/api.js'
+	
+	const wxLogin = async ()=>{
+		const res = await login({
+      			code: ""
+      		})
+		// uni.login({
+  		// 	provider: 'weixin', 
+  		// 	success: function (loginRes) {
+		// 	console.log(loginRes);
+    	// 	const res = await login({
+      	// 		code: ""
+      	// 	})
+  		// }
+	// });
 	}
 </script>
 
