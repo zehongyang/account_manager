@@ -1,28 +1,36 @@
 <template>
-	<view class="info">
+	<view class="info" @click="jumpToSave">
 		<image src="/static/images/avatar.png"></image>
-		<text>未登录</text>
-		<button @click="wxLogin">登录</button>
+		<text>微信用户</text>
 	</view>
 </template>
 
 <script setup>
 import { login } from '@/utils/request/api.js'
-	
-	const wxLogin = async ()=>{
-		const res = await login({
-      			code: ""
-      		})
-		// uni.login({
-  		// 	provider: 'weixin', 
-  		// 	success: function (loginRes) {
-		// 	console.log(loginRes);
-    	// 	const res = await login({
-      	// 		code: ""
-      	// 	})
-  		// }
-	// });
-	}
+import { ref } from 'vue'
+
+const jumpToSave = ()=>{
+	uni.navigateTo({
+		url: '/pages/profile/index'
+	})
+}
+const chooseAvatar = (e)=>{
+	console.log(e)
+}
+const wxLogin = async ()=>{
+const res = await login({
+		code: ""
+	})
+// uni.login({
+// 	provider: 'weixin', 
+// 	success: function (loginRes) {
+// 	console.log(loginRes);
+// 	const res = await login({
+// 		code: ""
+// 	})
+// }
+// });
+}
 </script>
 
 <style>
