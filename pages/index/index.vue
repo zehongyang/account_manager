@@ -18,6 +18,40 @@
 </template>
 
 <script setup>
+	import { onLoad } from '@dcloudio/uni-app'
+	import { login } from '@/utils/request/api.js'
+
+	onLoad(() => {
+		const user = uni.getStorageSync("user")
+		if (!user || !user.id || !user.token) {
+			uni.login({
+				provider: 'weixin',
+				success: (result) => {
+					login({
+						code: result.code
+					}).then(res=>{
+						uni.setStorageSync("user", {
+							id: res.user.id,
+							token: res.token,
+							nickname: res.user.nickname,
+							avatar: res.user.avatar,
+						})
+					}).catch(err=>{
+						uni.showToast({
+							title: '登录失败，请稍后重试',
+							icon: 'none'
+						})
+					})
+				},
+				fail: (error) => {
+					uni.showToast({
+						title: '登录失败，请稍后重试',
+						icon: 'none'
+					})
+				}
+			})
+		}
+	})
 	const addAccount = ()=>{
 		uni.navigateTo({
 			url: '/pages/addAccount/index',
